@@ -32,3 +32,9 @@ Settings -> Apps -> Default apps -> Digital assistant app -> VoiceMail. Then you
 ## Notes
 - Untested on a device; expect small tweaks. Consent screen in Testing mode may ask you to reconnect Gmail about weekly.
 - The Claude model is set in ClaudeClient.kt (`claude-haiku-5-5`).
+
+## Build without Android Studio (GitHub Actions)
+1. Create a **private** GitHub repo and upload this folder's contents (the folder containing `app`, `.github`, `settings.gradle.kts`).
+2. Repo -> Actions -> "Build APK" -> Run workflow. After ~5 minutes download `VoiceMail-apk` and unzip to get `app-debug.apk`.
+3. Copy the APK to the phone and install it (allow "install unknown apps").
+The APK is signed with the bundled `app/voicemail.keystore`, so its SHA-1 stays the same for the Google OAuth client.
